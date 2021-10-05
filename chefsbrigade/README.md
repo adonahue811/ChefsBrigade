@@ -1,24 +1,3 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is an application for disaster response that simplifies the distribution of locally prepared meals to food-insecure folks, as well as first responders. In its simplest form, it has ‘customers’ that would leave a request for a specific number of meals on certain days, software that accumulates those numbers and distributes them among ‘restaurants’ based on restaurant capacity, ‘program admins’ that can approve/edit those numbers, and ‘restaurants’ that prepare meals and deliver them to the distribution center. More advanced versions can also work on facilitating delivery and restaurant invoicing.
