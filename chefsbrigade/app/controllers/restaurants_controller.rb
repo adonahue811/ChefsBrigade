@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+<<<<<<< HEAD
   before_action :set_restaurant, only: %i[ show edit update destroy ]
 
   # GET /restaurants or /restaurants.json
@@ -53,6 +54,15 @@ class RestaurantsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to restaurants_url, notice: "Restaurant was successfully destroyed." }
       format.json { head :no_content }
+=======
+    def index
+>>>>>>> f7c47be4aa01c526fc09c104ec42114d2c9512bc
+    end
+    def r_id
+      return this.r_id
+    end
+    def name
+      return this.name
     end
   end
 
