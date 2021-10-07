@@ -202,11 +202,7 @@ DEPENDENCIES
   rails (~> 6.0.0)
   sass-rails (~> 5)
   selenium-webdriver
-<<<<<<< HEAD
   sqlite3 (~> 1.4.0)
-=======
-  sqlite3 (~> 1.4)
->>>>>>> f7c47be4aa01c526fc09c104ec42114d2c9512bc
   tzinfo-data
   web-console (>= 3.3.0)
   webdrivers
