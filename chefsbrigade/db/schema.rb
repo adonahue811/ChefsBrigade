@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_06_041725) do
+ActiveRecord::Schema.define(version: 2021_10_10_225624) do
 
   create_table "restaurants", force: :cascade do |t|
     t.integer "r_id"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2021_10_06_041725) do
     t.string "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string "description"
+    t.string "picture_link"
   end
 
 end
