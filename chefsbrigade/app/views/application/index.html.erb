@@ -10,10 +10,6 @@
   </head>
 
   <body>
-    <% @t = Restaurant.first -%>
-    <td>$<%= @t.r_id  %> </td>
-    <td><%=  @t.name %></td>
-    <p> hello </p>
     <%= yield %>
   </body>
 </html>
