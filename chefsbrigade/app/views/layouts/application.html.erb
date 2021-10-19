@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= favicon_link_tag asset_path('chf_hat.ico') %>
     <title>Chef's Brigade</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -18,8 +19,8 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home</a>
+      <li class="nav-item">
+        <a class="nav-link" href="/home">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/restaurants">Restaurants</a>
