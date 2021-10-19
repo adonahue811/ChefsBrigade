@@ -1,3 +1,0 @@
-# README
-
-This is an application for disaster response that simplifies the distribution of locally prepared meals to food-insecure folks, as well as first responders. In its simplest form, it has ‘customers’ that would leave a request for a specific number of meals on certain days, software that accumulates those numbers and distributes them among ‘restaurants’ based on restaurant capacity, ‘program admins’ that can approve/edit those numbers, and ‘restaurants’ that prepare meals and deliver them to the distribution center. More advanced versions can also work on facilitating delivery and restaurant invoicing.
