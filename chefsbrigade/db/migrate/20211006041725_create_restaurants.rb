@@ -8,8 +8,7 @@ class CreateRestaurants < ActiveRecord::Migration[4.2]
       t.string 'email'
       t.string 'picture_link'
       t.string 'description'
-      # Add fields that let Rails automatically keep track
-      # of when movies are added or modified:
+
       t.timestamps
     end
   end

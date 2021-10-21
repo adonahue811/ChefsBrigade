@@ -7,3 +7,13 @@ fake_restaurants = [
 fake_restaurants.each do |restaurant|
   Restaurant.create!(restaurant)
 end
+
+# Seed the restaurants DB with some customers.
+fake_customers = [
+  {:c_id => 1, :FirstName => 'First',:LastName => 'Person', :UserName => 'person1', :Num_Meals => '1', :Allergies => 'none', :Pickup_Date => '10/17/2021'},
+  {:c_id => 1, :FirstName => 'Second',:LastName => 'Customer', :UserName => 'person2', :Num_Meals => '2', :Allergies => 'Gluten', :Pickup_Date => '10/18/2021'},
+]
+
+fake_customers.each do |customer|
+  Customer.create!(customer)
+end
