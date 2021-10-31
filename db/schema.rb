@@ -17,26 +17,26 @@ ActiveRecord::Schema.define(version: 2021_10_16_195603) do
 
   create_table "customers", force: :cascade do |t|
     t.integer "c_id"
-    t.string "FirstName"
-    t.string "LastName"
-    t.string "UserName"
-    t.string "Num_Meals"
+    t.text "FirstName"
+    t.text "LastName"
+    t.text "UserName"
+    t.text "Num_Meals"
     t.json "Allergies"
     t.datetime "Pickup_Date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "restaurants", force: :cascade do |t|
+  create_table "restaurants", id: :serial, force: :cascade do |t|
     t.integer "r_id"
-    t.string "name"
-    t.string "address"
-    t.string "phone"
-    t.string "email"
+    t.text "name"
+    t.text "address"
+    t.text "phone"
+    t.text "email"
+    t.text "picture_link"
+    t.text "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string "description"
-    t.string "picture_link"
   end
 
 end
