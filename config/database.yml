@@ -15,14 +15,16 @@
 # gem 'pg'
 #
 development:
-  adapter: postgresql
-  encoding: unicode
-  database: <%= ENV['dbprod'] %>
+  #adapter: postgresql
+  #encoding: unicode
+  #database: <%= ENV['dbdevel'] %>
+  #pool: 5
+  #username: <%= ENV['username'] %>
+  #password: <%= ENV['pswd'] %>
+  #timeout: 5000
+  adapter: postgres
+  url: postgres://wkxsrvzdqxphvk:c333ba8b0f543968c9035672c01ac1131377861450464bdfb242a3261937baf6@ec2-34-199-209-37.compute-1.amazonaws.com:5432/d9ccigrtjmqs43
   pool: 5
-  username: <%= ENV['username'] %>
-  password: <%= ENV['pswd'] %>
-  timeout: 5000
- 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
@@ -53,5 +55,6 @@ test:
   password: <%= ENV['pswd'] %>
   timeout: 5000
 production:
-  url: <%= ENV['DATABASE_URL'] %>
+  adapter: postgres
+  url: postgres://wkxsrvzdqxphvk:c333ba8b0f543968c9035672c01ac1131377861450464bdfb242a3261937baf6@ec2-34-199-209-37.compute-1.amazonaws.com:5432/d9ccigrtjmqs43
   pool: 5
