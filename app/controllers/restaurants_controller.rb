@@ -56,12 +56,14 @@ class RestaurantsController < ApplicationController
       format.html { redirect_to restaurants_url, notice: "Restaurant was successfully destroyed." }
       format.json { head :no_content }
     end
-    def r_id
+  end
+
+  
+  def r_id
       return this.r_id
-    end
-    def name
+  end
+  def name
       return this.name
-    end
   end
 
   private
