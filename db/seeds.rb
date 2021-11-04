@@ -38,7 +38,7 @@ fake_restaurants.each do |restaurant|
   Restaurant.create!(restaurant)
 end
 
-# Seed the restaurants DB with some customers.
+# Seed the customers DB with some customers.
 fake_customers = [
   {:c_id => 1, :FirstName => 'April',:LastName => 'Stewart', :UserName => 'AStewart', :Num_Meals => '19', :Allergies => 'Dairy', :Pickup_Date => ' 2021-07-11 00:00:00 UTC'},
   {:c_id => 1, :FirstName => 'Josh',:LastName => 'Stein', :UserName => 'JStein', :Num_Meals => '30', :Allergies => 'Gluten', :Pickup_Date => ' 2021-07-11 00:00:00 UTC'},
