@@ -1,12 +1,9 @@
 class AdminController < ApplicationController
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  before_action :authenticate_usr!
-=======
->>>>>>> parent of b67088d0... moved authentication to admin page
-=======
->>>>>>> parent of b67088d0... moved authentication to admin page
-=======
->>>>>>> parent of b67088d0... moved authentication to admin page
+    before_action :authenticate_user!
+
+    def index
+        @customers = Customer.all
+        #@orders = Order.all
+        @restaurants = Restaurant.all
+      end
 end

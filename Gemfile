@@ -52,3 +52,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # for date validation
 gem 'date_validator', '~> 0.10.0'
+
+gem 'devise'
