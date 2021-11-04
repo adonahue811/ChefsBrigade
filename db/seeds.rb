@@ -26,6 +26,34 @@ fake_restaurants.each do |restaurant|
   Restaurant.create!(restaurant)
 end
 
+# Seed the orders DB with some orders.
+fake_orders = [
+  {:o_id => 1, :MealDescription => 'sandwiches', :NumMeals => 25, :CustomerID => 5, :RestaurantID => 3, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 2, :MealDescription => 'sandwiches', :NumMeals => 10, :CustomerID => 3, :RestaurantID => 5, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 3, :MealDescription => 'soup and salad', :NumMeals => 90, :CustomerID => 6, :RestaurantID => 7, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 4, :MealDescription => 'sandwiches', :NumMeals => 25, :CustomerID => 7, :RestaurantID => 6, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 5, :MealDescription => 'pizza', :NumMeals => 3, :CustomerID => 9, :RestaurantID => 8, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 6, :MealDescription => 'soup and salad', :NumMeals => 15, :CustomerID => 8, :RestaurantID => 9, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 7, :MealDescription => 'sandwiches', :NumMeals => 25, :CustomerID => 1, :RestaurantID => 2, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 8, :MealDescription => 'pizza', :NumMeals => 25, :CustomerID => 2, :RestaurantID => 1, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 9, :MealDescription => 'sandwiches', :NumMeals => 34, :CustomerID => 4, :RestaurantID => 16, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 10, :MealDescription => 'soup and salad', :NumMeals => 9, :CustomerID => 16, :RestaurantID => 4, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 11, :MealDescription => 'sandwiches', :NumMeals => 25, :CustomerID => 17, :RestaurantID => 18, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 12, :MealDescription => 'sandwiches', :NumMeals => 25, :CustomerID => 18, :RestaurantID => 17, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 13, :MealDescription => 'sandwiches', :NumMeals => 10, :CustomerID => 19, :RestaurantID => 19, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 14, :MealDescription => 'sandwiches', :NumMeals => 5, :CustomerID => 20, :RestaurantID => 20, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 15, :MealDescription => 'pizza', :NumMeals => 5, :CustomerID => 11, :RestaurantID => 10, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 16, :MealDescription => 'pizza', :NumMeals => 10, :CustomerID => 10, :RestaurantID => 11, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 17, :MealDescription => 'sandwiches', :NumMeals => 25, :CustomerID => 14, :RestaurantID => 13, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 18, :MealDescription => 'sandwiches', :NumMeals => 25, :CustomerID => 13, :RestaurantID => 14, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 19, :MealDescription => 'sandwiches', :NumMeals => 79, :CustomerID => 12, :RestaurantID => 15, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 20, :MealDescription => 'sandwiches', :NumMeals => 4, :CustomerID => 15, :RestaurantID => 12, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+]
+
+fake_orders.each do |order|
+  Order.create!(order)
+end
+
 # Seed the customers DB with some customers.
 fake_customers = [
   {:c_id => 1, :FirstName => 'April',:LastName => 'Stewart', :UserName => 'AStewart', :Num_Meals => '19', :Allergies => 'Dairy', :Pickup_Date => ' 2021-07-11 00:00:00 UTC'},
@@ -48,8 +76,6 @@ fake_customers = [
   {:c_id => 18, :FirstName => 'Luke',:LastName => 'Gloomed', :UserName => 'LGloomed', :Num_Meals => '2', :Allergies => 'Gluten', :Pickup_Date => ' 2021-07-11 00:00:00 UTC'},
   {:c_id => 19, :FirstName => 'Alex',:LastName => 'Cloud', :UserName => 'ACloud', :Num_Meals => '1', :Allergies => 'none', :Pickup_Date => ' 2021-07-11 00:00:00 UTC'},
   {:c_id => 20, :FirstName => 'Julia',:LastName => 'Stall', :UserName => 'JStall', :Num_Meals => '2', :Allergies => 'Gluten', :Pickup_Date => ' 2021-07-11 00:00:00 UTC'},
-  {:c_id => 21, :FirstName => 'Ron',:LastName => 'Son', :UserName => 'RSon', :Num_Meals => '1', :Allergies => 'none', :Pickup_Date => ' 2021-07-11 00:00:00 UTC'},
-  {:c_id => 22, :FirstName => 'Michelle',:LastName => 'Crall', :UserName => 'MCrall', :Num_Meals => '2', :Allergies => 'Gluten', :Pickup_Date => ' 2021-07-11 00:00:00 UTC'}
 ]
 
 fake_customers.each do |customer|

@@ -29,11 +29,11 @@ ActiveRecord::Schema.define(version: 2021_11_03_194335) do
 
   create_table "orders", force: :cascade do |t|
     t.integer "o_id"
-    t.string "meal_description"
-    t.integer "num_meals"
-    t.integer "customer_id"
-    t.integer "restaurant_id"
-    t.datetime "pickup_date"
+    t.text "MealDescription"
+    t.integer "NumMeals"
+    t.integer "CustomerID"
+    t.integer "RestaurantID"
+    t.datetime "PickupDate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
