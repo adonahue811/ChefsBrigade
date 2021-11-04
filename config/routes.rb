@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :customers
   resources :home
   resources :admin
+  resources :orders
   root :to => redirect('/home')
 end
