@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2021_11_03_211446) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    #might need to change this later
+    #might need to change this back later
     t.index ["email"], name: "index_customers_on_email", unique: false
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
@@ -116,7 +116,8 @@ ActiveRecord::Schema.define(version: 2021_11_03_211446) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_usrs_on_email", unique: true
+    # might have to change it
+    #t.index ["email"], name: "index_usrs_on_email", unique: false
     t.index ["reset_password_token"], name: "index_usrs_on_reset_password_token", unique: true
   end
 
