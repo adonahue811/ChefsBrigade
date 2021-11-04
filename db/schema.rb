@@ -10,26 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_11_03_194335) do
+=======
+ActiveRecord::Schema.define(version: 2021_10_16_195603) do
+>>>>>>> parent of 96db93da... Created sign in/sign up
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "admin", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "admins", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "username"
-    t.index ["username"], name: "index_admins_on_username", unique: true
-  end
 
   create_table "customers", force: :cascade do |t|
     t.integer "c_id"
@@ -43,6 +31,7 @@ ActiveRecord::Schema.define(version: 2021_11_03_194335) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+<<<<<<< HEAD
   create_table "models", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -66,6 +55,8 @@ ActiveRecord::Schema.define(version: 2021_11_03_194335) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+=======
+>>>>>>> parent of 96db93da... Created sign in/sign up
   create_table "restaurants", id: :serial, force: :cascade do |t|
     t.integer "r_id"
     t.text "name"
@@ -76,27 +67,6 @@ ActiveRecord::Schema.define(version: 2021_11_03_194335) do
     t.text "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "username"
-    t.index ["username"], name: "index_users_on_username", unique: true
-  end
-
-  create_table "usrs", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_usrs_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_usrs_on_reset_password_token", unique: true
   end
 
 end
