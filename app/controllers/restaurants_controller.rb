@@ -1,5 +1,13 @@
 class RestaurantsController < ApplicationController
-  before_action :set_restaurant, only: %i[ show edit update destroy ]
+  #before_action :set_restaurant, only: %i[ show edit update destroy ]
+  before_action :authenticate_usr!
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of b67088d0... moved authentication to admin page
+
+>>>>>>> parent of b67088d0... moved authentication to admin page
 
   # GET /restaurants or /restaurants.json
   def index
