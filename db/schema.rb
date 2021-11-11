@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_03_211446) do
+ActiveRecord::Schema.define(version: 2021_11_11_023315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,18 +30,17 @@ ActiveRecord::Schema.define(version: 2021_11_03_211446) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    #might need to change this back later
-    t.index ["email"], name: "index_customers_on_email", unique: false
+    t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
   create_table "orders", force: :cascade do |t|
     t.integer "o_id"
-    t.text "MealDescription"
-    t.integer "NumMeals"
-    t.integer "CustomerID"
-    t.integer "RestaurantID"
-    t.datetime "PickupDate"
+    t.string "meal_description"
+    t.integer "num_meals"
+    t.integer "customer_id"
+    t.integer "restaurant_id"
+    t.datetime "pickup_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -56,19 +55,6 @@ ActiveRecord::Schema.define(version: 2021_11_03_211446) do
     t.text "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "usrs", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    # might have to change it
-    #t.index ["email"], name: "index_usrs_on_email", unique: false
-    t.index ["reset_password_token"], name: "index_usrs_on_reset_password_token", unique: true
   end
 
 end
