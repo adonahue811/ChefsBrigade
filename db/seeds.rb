@@ -27,31 +27,28 @@ fake_restaurants.each do |restaurant|
   Restaurant.create!(restaurant)
 end
 
-<<<<<<< HEAD
-#Seed the restaurants DB with some customers.
-=======
 # Seed the orders DB with some orders.
 fake_orders = [
-  {:o_id => 1, :MealDescription => 'sandwiches', :NumMeals => 25, :CustomerID => 5, :RestaurantID => 3, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
-  {:o_id => 2, :MealDescription => 'sandwiches', :NumMeals => 10, :CustomerID => 3, :RestaurantID => 5, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
-  {:o_id => 3, :MealDescription => 'soup and salad', :NumMeals => 90, :CustomerID => 6, :RestaurantID => 7, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
-  {:o_id => 4, :MealDescription => 'sandwiches', :NumMeals => 25, :CustomerID => 7, :RestaurantID => 6, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
-  {:o_id => 5, :MealDescription => 'pizza', :NumMeals => 3, :CustomerID => 9, :RestaurantID => 8, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
-  {:o_id => 6, :MealDescription => 'soup and salad', :NumMeals => 15, :CustomerID => 8, :RestaurantID => 9, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
-  {:o_id => 7, :MealDescription => 'sandwiches', :NumMeals => 25, :CustomerID => 1, :RestaurantID => 2, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
-  {:o_id => 8, :MealDescription => 'pizza', :NumMeals => 25, :CustomerID => 2, :RestaurantID => 1, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
-  {:o_id => 9, :MealDescription => 'sandwiches', :NumMeals => 34, :CustomerID => 4, :RestaurantID => 16, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
-  {:o_id => 10, :MealDescription => 'soup and salad', :NumMeals => 9, :CustomerID => 16, :RestaurantID => 4, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
-  {:o_id => 11, :MealDescription => 'sandwiches', :NumMeals => 25, :CustomerID => 17, :RestaurantID => 18, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
-  {:o_id => 12, :MealDescription => 'sandwiches', :NumMeals => 25, :CustomerID => 18, :RestaurantID => 17, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
-  {:o_id => 13, :MealDescription => 'sandwiches', :NumMeals => 10, :CustomerID => 19, :RestaurantID => 19, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
-  {:o_id => 14, :MealDescription => 'sandwiches', :NumMeals => 5, :CustomerID => 20, :RestaurantID => 20, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
-  {:o_id => 15, :MealDescription => 'pizza', :NumMeals => 5, :CustomerID => 11, :RestaurantID => 10, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
-  {:o_id => 16, :MealDescription => 'pizza', :NumMeals => 10, :CustomerID => 10, :RestaurantID => 11, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
-  {:o_id => 17, :MealDescription => 'sandwiches', :NumMeals => 25, :CustomerID => 14, :RestaurantID => 13, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
-  {:o_id => 18, :MealDescription => 'sandwiches', :NumMeals => 25, :CustomerID => 13, :RestaurantID => 14, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
-  {:o_id => 19, :MealDescription => 'sandwiches', :NumMeals => 79, :CustomerID => 12, :RestaurantID => 15, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
-  {:o_id => 20, :MealDescription => 'sandwiches', :NumMeals => 4, :CustomerID => 15, :RestaurantID => 12, :PickupDate => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 1, :meal_description => 'sandwiches', :num_meals => 25, :customer_id => 5, :restaurant_id => 3, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 2, :meal_description => 'sandwiches', :num_meals => 10, :customer_id => 3, :restaurant_id => 5, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 3, :meal_description => 'soup and salad', :num_meals => 90, :customer_id => 6, :restaurant_id => 7, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 4, :meal_description => 'sandwiches', :num_meals => 25, :customer_id => 7, :restaurant_id => 6, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 5, :meal_description => 'pizza', :num_meals => 3, :customer_id => 9, :restaurant_id => 8, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 6, :meal_description => 'soup and salad', :num_meals => 15, :customer_id => 8, :restaurant_id => 9, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 7, :meal_description => 'sandwiches', :num_meals => 25, :customer_id => 1, :restaurant_id => 2, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 8, :meal_description => 'pizza', :num_meals => 25, :customer_id => 2, :restaurant_id => 1, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 9, :meal_description => 'sandwiches', :num_meals => 34, :customer_id => 4, :restaurant_id => 16, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 10, :meal_description => 'soup and salad', :num_meals => 9, :customer_id => 16, :restaurant_id => 4, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 11, :meal_description => 'sandwiches', :num_meals => 25, :customer_id => 17, :restaurant_id => 18, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 12, :meal_description => 'sandwiches', :num_meals => 25, :customer_id => 18, :restaurant_id => 17, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 13, :meal_description => 'sandwiches', :num_meals => 10, :customer_id => 19, :restaurant_id => 19, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 14, :meal_description => 'sandwiches', :num_meals => 5, :customer_id => 20, :restaurant_id => 20, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 15, :meal_description => 'pizza', :num_meals => 5, :customer_id => 11, :restaurant_id => 10, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 16, :meal_description => 'pizza', :num_meals => 10, :customer_id => 10, :restaurant_id => 11, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 17, :meal_description => 'sandwiches', :num_meals => 25, :customer_id => 14, :restaurant_id => 13, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 18, :meal_description => 'sandwiches', :num_meals => 25, :customer_id => 13, :restaurant_id => 14, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 19, :meal_description => 'sandwiches', :num_meals => 79, :customer_id => 12, :restaurant_id => 15, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
+  {:o_id => 20, :meal_description => 'sandwiches', :num_meals => 4, :customer_id => 15, :restaurant_id => 12, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
 ]
 
 fake_orders.each do |order|
@@ -59,7 +56,6 @@ fake_orders.each do |order|
 end
 
 # Seed the customers DB with some customers.
->>>>>>> master
 fake_customers = [
   {:c_id => 1, :FirstName => 'April',:LastName => 'Stewart', :UserName => 'AStewart', :Num_Meals => '19', :Allergies => 'Dairy', :Pickup_Date => ' 2021-07-11 00:00:00 UTC'},
   {:c_id => 2, :FirstName => 'Josh',:LastName => 'Stein', :UserName => 'JStein', :Num_Meals => '30', :Allergies => 'Gluten', :Pickup_Date => ' 2021-07-11 00:00:00 UTC'},
