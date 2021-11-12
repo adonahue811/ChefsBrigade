@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :admin
   resources :orders
   root :to => redirect('/home')
+  
+  #resource :session
 end
