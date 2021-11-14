@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :customers
   resources :home
   resources :admin
+  resources :users
   resources :orders
   root :to => redirect('/home')
   
-  #resource :session
 end
