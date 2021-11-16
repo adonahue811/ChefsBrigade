@@ -70,3 +70,5 @@ font-variant: small-caps;
 
 }
 .card {display:inline-block;}
+th { text-align: center;
+}
