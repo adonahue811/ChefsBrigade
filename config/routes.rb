@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :orders
   root :to => redirect('/home')
   
-  resources :users, only: [] do
+  resources :customers, only: [] do
     resources :orders, module: :users, only: :index
   end
 end
