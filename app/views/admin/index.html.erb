@@ -15,19 +15,19 @@
   <thead>
     <tr>
       <th>C</th>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Username</th>
+      <th>first_name</th>
+      <th>last_name</th>
+      <th>username</th>
       <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
-        <td><%= customer.c_id %></td>
-        <td><%= customer.FirstName %></td>
-        <td><%= customer.LastName %></td>
-        <td><%= customer.UserName %></td>
+        <td><%= customer.id %></td>
+        <td><%= customer.first_name %></td>
+        <td><%= customer.last_name %></td>
+        <td><%= customer.username %></td>
       </tr>
     <% end %>
   </tbody>
@@ -51,7 +51,6 @@
   <tbody>
     <% @restaurants.each do |restaurant| %>
       <tr>
-        <td><%= restaurant.r_id %></td>
         <td><%= restaurant.name %></td>
         <td><%= restaurant.address %></td>
         <td><%= restaurant.phone %></td>

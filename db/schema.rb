@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_15_031812) do
+ActiveRecord::Schema.define(version: 2021_11_17_225416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2021_11_15_031812) do
   end
 
   create_table "customers", force: :cascade do |t|
-    t.integer "c_id"
     t.text "FirstName"
     t.text "LastName"
     t.text "UserName"
@@ -42,15 +41,16 @@ ActiveRecord::Schema.define(version: 2021_11_15_031812) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "email"
+    t.integer "order"
     t.index ["email"], name: "index_customers_on_email"
+    t.index ["order"], name: "index_customers_on_order"
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "o_id"
     t.string "meal_description"
     t.integer "num_meals"
-    t.integer "customer_id"
+    t.integer "user_id"
     t.integer "restaurant_id"
     t.datetime "pickup_date"
     t.datetime "created_at", precision: 6, null: false
@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 2021_11_15_031812) do
   end
 
   create_table "restaurants", id: :serial, force: :cascade do |t|
-    t.integer "r_id"
     t.text "name"
     t.text "address"
     t.text "phone"
@@ -78,6 +77,12 @@ ActiveRecord::Schema.define(version: 2021_11_15_031812) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "order_id"
+    t.text "first_name"
+    t.text "last_name"
+    t.text "username"
+    t.integer "num_meals"
+    t.datetime "pickup_date"
+    t.json "allergies"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["order_id"], name: "index_users_on_order_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

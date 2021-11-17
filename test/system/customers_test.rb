@@ -20,7 +20,6 @@ class CustomersTest < ApplicationSystemTestCase
     fill_in "Num meals", with: @customer.Num_Meals
     fill_in "Pickup date", with: @customer.Pickup_Date
     fill_in "Username", with: @customer.UserName
-    fill_in "C", with: @customer.c_id
     click_on "Create Customer"
 
     assert_text "Customer was successfully created"
@@ -37,7 +36,6 @@ class CustomersTest < ApplicationSystemTestCase
     fill_in "Num meals", with: @customer.Num_Meals
     fill_in "Pickup date", with: @customer.Pickup_Date
     fill_in "Username", with: @customer.UserName
-    fill_in "C", with: @customer.c_id
     click_on "Update Customer"
 
     assert_text "Customer was successfully updated"

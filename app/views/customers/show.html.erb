@@ -1,38 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>C:</strong>
-  <%= @customer.c_id %>
+  <strong>first_name:</strong>
+  <%= @customer.first_name %>
 </p>
 
 <p>
-  <strong>Firstname:</strong>
-  <%= @customer.FirstName %>
+  <strong>last_name:</strong>
+  <%= @customer.last_name %>
 </p>
 
 <p>
-  <strong>Lastname:</strong>
-  <%= @customer.LastName %>
+  <strong>username:</strong>
+  <%= @customer.username %>
 </p>
 
 <p>
-  <strong>Username:</strong>
-  <%= @customer.UserName %>
+  <strong>num_meals:</strong>
+  <%= @customer.num_meals %>
 </p>
 
 <p>
-  <strong>Num meals:</strong>
-  <%= @customer.Num_Meals %>
+  <strong>allergies:</strong>
+  <%= @customer.allergies %>
 </p>
 
 <p>
-  <strong>Allergies:</strong>
-  <%= @customer.Allergies %>
-</p>
-
-<p>
-  <strong>Pickup date:</strong>
-  <%= @customer.Pickup_Date %>
+  <strong>pickup_date:</strong>
+  <%= @customer.pickup_date %>
 </p>
 
 <%= link_to 'Edit', edit_customer_path(@customer) %> |

@@ -18,7 +18,6 @@ class RestaurantsTest < ApplicationSystemTestCase
     fill_in "Email", with: @restaurant.email
     fill_in "Name", with: @restaurant.name
     fill_in "Phone", with: @restaurant.phone
-    fill_in "R", with: @restaurant.r_id
     click_on "Create Restaurant"
 
     assert_text "Restaurant was successfully created"
@@ -33,7 +32,6 @@ class RestaurantsTest < ApplicationSystemTestCase
     fill_in "Email", with: @restaurant.email
     fill_in "Name", with: @restaurant.name
     fill_in "Phone", with: @restaurant.phone
-    fill_in "R", with: @restaurant.r_id
     click_on "Update Restaurant"
 
     assert_text "Restaurant was successfully updated"
