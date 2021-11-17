@@ -7,16 +7,10 @@
       <h1 style="text-align:left; padding-left:2%;">Admin Page</h1>
     </div> 
 </div>
-<div class="row" style="background-color:#aad4e5;color:black;">
-     <div class="col-9" style="text-indent:70px;text-align:center;">
-     <p style="color:inherit;">
-     This is where the admin table will go
-    </p>
-    </div>
-    </div>
+
 <div>
 <div class="row"><h1 class="col-sm">Customers</h1>
-<p class="col-sm"><%= link_to 'New Customer', new_customer_path %></p></div>
+<p class="col-sm btn btn-primary"><%= link_to 'New Customer', new_customer_path %></p></div>
 <table>
   <thead>
     <tr>
@@ -24,9 +18,6 @@
       <th>Firstname</th>
       <th>Lastname</th>
       <th>Username</th>
-      <th>Num meals</th>
-      <th>Allergies</th>
-      <th>Pickup date</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -37,12 +28,6 @@
         <td><%= customer.FirstName %></td>
         <td><%= customer.LastName %></td>
         <td><%= customer.UserName %></td>
-        <td><%= customer.Num_Meals %></td>
-        <td><%= customer.Allergies %></td>
-        <td><%= customer.Pickup_Date %></td>
-        <td><%= link_to 'Show', customer %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -50,7 +35,7 @@
 </div>
 <div>
 <div class="row"><h1 class="col-lg">Restaurants</h1>
-<p class="col-sm"><%= link_to 'New Restaurant', new_restaurant_path %></p></div>
+<p class="col-sm btn primary-button"><%= link_to 'New Restaurant', new_restaurant_path %></p></div>
 <table>
   <thead>
     <tr>

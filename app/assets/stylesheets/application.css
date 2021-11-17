@@ -74,3 +74,5 @@ list-style-type: none;
 
 }
 .card {display:inline-block;}
+th { text-align: center;
+}
