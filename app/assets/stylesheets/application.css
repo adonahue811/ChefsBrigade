@@ -76,3 +76,21 @@ list-style-type: none;
 .card {display:inline-block;}
 th { text-align: center;
 }
+.signinBox{
+  background-image: linear-gradient(to bottom, #ffffff 0%, #00b7ff 100%);
+}
+.signinBox h2 {
+  text-align: center;
+  font-size: 300%;
+  text-shadow: 2px 3px 5px gray;
+}
+.signinBox .field {
+  margin-left: 40%;
+  width: 20%;
+  margin-bottom: 2px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align:center;
+  background-color: #ffffff;
+}
