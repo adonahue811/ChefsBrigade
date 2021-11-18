@@ -25,9 +25,9 @@
     <% @customers.each do |customer| %>
       <tr>
         <td><%= customer.id %></td>
-        <td><%= customer.first_name %></td>
-        <td><%= customer.last_name %></td>
-        <td><%= customer.username %></td>
+        <td><%= customer.FirstName %></td>
+        <td><%= customer.LastName %></td>
+        <td><%= customer.UserName %></td>
       </tr>
     <% end %>
   </tbody>
@@ -82,11 +82,8 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.o_id %></td>
         <td><%= order.meal_description %></td>
         <td><%= order.num_meals %></td>
-        <td><%= order.customer_id %></td>
-        <td><%= order.restaurant_id %></td>
         <td><%= order.pickup_date %></td>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
