@@ -14,7 +14,9 @@
  *= require_self
  */
 
-
+footer{
+  color: whitesmoke;
+}
 table{
 font: 'San Francisco', Helvetica, Arial, san-serif;font-size: 20px;
 letter-spacing: 1.6px;
