@@ -18,6 +18,7 @@
 <tbody>
     <% @restaurants.each do |restaurant| %>
       <tr>
+        <td><%= restaurant.r_id %></td>
         <td><%= restaurant.name %></td>
         <td><%= restaurant.address %></td>
         <td><%= restaurant.phone %></td>
@@ -32,13 +33,12 @@
   <% i = 0%>
   <% @restaurants.each do |restaurant| %>
     <% if i%3==0 %>
-    <div style="height:50px;"></div>
-    <div class="card-deck" style="margin-left:10px;margin-right:10px;">
+    <div class="card-deck">
     <% end %>
   <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="<%= restaurant.picture_link %>" alt="Card image cap" width="500px" height="300px">
+  <img class="card-img-top" src="<%= restaurant.picture_link %>" alt="Card image cap">
   <div class="card-body">
-    <h4 class="card-title" style="text-shadow: 2px 3px 5px gray;font-size:140%"><%= restaurant.name %></h4>
+    <h4 class="card-title"><%= restaurant.name %></h4>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Address: <b><%= restaurant.address %></b></li>
@@ -47,6 +47,7 @@
   </ul>
   <div class="card-body">
     <p class="card-text"><%= restaurant.description %></b></p>
+    <a href="#" class="btn btn-primary">Submit form for this restaurant</a>
 </div>
 </div>
     <% if i%3==2 %>

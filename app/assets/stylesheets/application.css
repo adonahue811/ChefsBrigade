@@ -24,7 +24,7 @@ font-weight: normal;
 text-decoration: none;
 font-style: normal;
 text-transform: none;
-font-variant: none;
+font-variant: small-caps;
 border: 1px solid black;
 width: 100%;
 border-bottom:1px solid black;
@@ -48,16 +48,13 @@ text-align: center;
 font: 'San Francisco', Helvetica, Arial, san-serif;font-size: 27px;
 letter-spacing: 1.6px;
 word-spacing: 1px;
-color: gray;
+color: #000000;
 font-weight: bold;
 text-decoration: none;
 font-style: normal;
 font-variant: small-caps;
 text-transform: none;
 }
-a:hover {
-    color: lightgray;
-  }
 
 p, li,  tbody, h4{
 text-align: center;
@@ -69,8 +66,7 @@ font-weight: normal;
 text-decoration: none;
 font-style: normal;
 text-transform: none;
-font-variant: none;
-list-style-type: none;
+font-variant: small-caps;
 
 }
 .card {display:inline-block;}

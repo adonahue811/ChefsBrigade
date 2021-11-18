@@ -20,6 +20,7 @@
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
+        <td><%= customer.c_id %></td>
         <td><%= customer.FirstName %></td>
         <td><%= customer.LastName %></td>
         <td><%= customer.UserName %></td>

@@ -1,6 +1,7 @@
 class CreateCustomers < ActiveRecord::Migration[6.0]
   def change
     create_table 'customers' do |t|
+      t.integer 'c_id'
       t.text 'FirstName'
       t.text 'LastName'
       t.text 'UserName'
