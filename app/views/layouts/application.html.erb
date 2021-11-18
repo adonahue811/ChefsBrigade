@@ -32,7 +32,7 @@
       </div>
         <% if user_signed_in? %>
         
-          <li style="list-style: none;"><%= link_to  "Profile", current_user %></li> 
+          <li style="list-style: none;"><%= link_to  "Profile", current_user, class: "a" %></li> 
             
           <%= link_to "Log out", destroy_user_session_path, :method=>'delete'%>
           
