@@ -7,6 +7,7 @@ Hi, <%= current_user.first_name %>!
 </div>
 </p>
 </div>
+
 <p>
   <strong>first_name:</strong>
   <%= @user.first_name %>
@@ -37,5 +38,4 @@ Hi, <%= current_user.first_name %>!
   <%= @user.pickup_date %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit', edit_user_path(@user) %>
