@@ -1,10 +1,11 @@
-class DropAdminsTable < ActiveRecord::Migration[6.0]
+class DropUsersTable < ActiveRecord::Migration[6.0]
     def up
-      drop_table :admins
+      drop_table :users
     end
   
     def down
       raise ActiveRecord::IrreversibleMigration
     end
-  
 end
+  
+
