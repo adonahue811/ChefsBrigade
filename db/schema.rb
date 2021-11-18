@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_18_075400) do
+ActiveRecord::Schema.define(version: 2021_11_18_081741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2021_11_18_075400) do
   create_table "orders", force: :cascade do |t|
     t.string "meal_description"
     t.integer "num_meals"
-    t.integer "customer_id"
+    t.integer "user_id"
     t.integer "restaurant_id"
     t.datetime "pickup_date"
     t.datetime "created_at", precision: 6, null: false
@@ -75,7 +75,9 @@ ActiveRecord::Schema.define(version: 2021_11_18_075400) do
     t.string "first_name"
     t.string "last_name"
     t.string "username"
+    t.string "order_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["order_id"], name: "index_users_on_order_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

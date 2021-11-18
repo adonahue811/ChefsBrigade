@@ -17,7 +17,6 @@ class OrdersTest < ApplicationSystemTestCase
     fill_in "Customer", with: @order.customer_id
     fill_in "Meal description", with: @order.meal_description
     fill_in "Num meals", with: @order.num_meals
-    fill_in "O", with: @order.o_id
     fill_in "Pickup date", with: @order.pickup_date
     fill_in "Restaurant", with: @order.restaurant_id
     click_on "Create Order"
@@ -33,7 +32,6 @@ class OrdersTest < ApplicationSystemTestCase
     fill_in "Customer", with: @order.customer_id
     fill_in "Meal description", with: @order.meal_description
     fill_in "Num meals", with: @order.num_meals
-    fill_in "O", with: @order.o_id
     fill_in "Pickup date", with: @order.pickup_date
     fill_in "Restaurant", with: @order.restaurant_id
     click_on "Update Order"

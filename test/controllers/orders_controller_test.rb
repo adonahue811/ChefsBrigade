@@ -17,7 +17,7 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create order" do
     assert_difference('Order.count') do
-      post orders_url, params: { order: { customer_id: @order.customer_id, meal_description: @order.meal_description, num_meals: @order.num_meals, o_id: @order.o_id, pickup_date: @order.pickup_date, restaurant_id: @order.restaurant_id } }
+      post orders_url, params: { order: { customer_id: @order.customer_id, meal_description: @order.meal_description, num_meals: @order.num_meals, pickup_date: @order.pickup_date, restaurant_id: @order.restaurant_id } }
     end
 
     assert_redirected_to order_url(Order.last)
@@ -34,7 +34,7 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update order" do
-    patch order_url(@order), params: { order: { customer_id: @order.customer_id, meal_description: @order.meal_description, num_meals: @order.num_meals, o_id: @order.o_id, pickup_date: @order.pickup_date, restaurant_id: @order.restaurant_id } }
+    patch order_url(@order), params: { order: { customer_id: @order.customer_id, meal_description: @order.meal_description, num_meals: @order.num_meals, pickup_date: @order.pickup_date, restaurant_id: @order.restaurant_id } }
     assert_redirected_to order_url(@order)
   end
 

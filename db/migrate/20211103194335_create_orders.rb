@@ -1,7 +1,6 @@
 class CreateOrders < ActiveRecord::Migration[6.0]
   def change
     create_table 'orders' do |t|
-      t.integer 'o_id'
       t.string 'meal_description'
       t.integer 'num_meals'
       t.integer 'customer_id'
