@@ -14,6 +14,7 @@ Here are your current orders:
     <tr>
        <th>Order Id</th>
        <th>Date Requested</th>
+       <th>Pickup Date</th>
        <th>Meal description</th>
     </tr>
   </thead>
@@ -24,7 +25,11 @@ Here are your current orders:
       
       <td><%= order.created_at %></td>
 
+      <td><%= order.pickup_date %></td>
+
       <td><%= order.meal_description %></td>
+
+
       </tr>
     <% end %>
   </tbody>
