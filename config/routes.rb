@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   resources :admin
   resources :orders
   root :to => redirect('/home')
+
+  get 'users/:id' => 'users#show'
+  resources :users, :only => [:show]
 end

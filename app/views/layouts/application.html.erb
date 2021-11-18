@@ -28,23 +28,28 @@
       <li class="nav-item">
         <a class="nav-link" href="/customers">Customers</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/admin">Admin</a>
-      </li>
+      <li <div class="ml-auto">
+      </div>
+        <% if user_signed_in? %>
+        
+        <li class="nav-item">
+          <li><%= link_to  "Profile", current_user %></li> 
+            
+          <%= link_to "Log out", destroy_user_session_path, :method=>'delete'%>
+          
+          <% else %>
+          <%= link_to "login", new_user_session_path %>
+          <% end %>
+    </li>
+    
     </ul>
   </div>
 </nav>
-    <%= yield %>
-  </body>
-  <footer class="navbar-dark bg-dark">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <a style="color:white">&copy; Chef's Brigade</a>
-      </div>
-      <div class="col-sm-6">
-          <a href="#" style="color:white">Contact Us</a>
-      </div>
-    </div>
-    </footer>
+
+
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+<%= yield %>
 </html>

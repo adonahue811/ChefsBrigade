@@ -32,15 +32,10 @@
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
+        <td><%= customer.id %></td>
         <td><%= customer.FirstName %></td>
         <td><%= customer.LastName %></td>
         <td><%= customer.UserName %></td>
-        <td><%= customer.Num_Meals %></td>
-        <td><%= customer.Allergies %></td>
-        <td><%= customer.Pickup_Date %></td>
-        <td><%= link_to 'Show', customer %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
