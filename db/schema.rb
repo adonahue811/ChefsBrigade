@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_03_194335) do
+ActiveRecord::Schema.define(version: 2021_11_18_072411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admin", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "customers", force: :cascade do |t|
     t.integer "c_id"
@@ -25,15 +34,22 @@ ActiveRecord::Schema.define(version: 2021_11_03_194335) do
     t.datetime "Pickup_Date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_customers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
   create_table "orders", force: :cascade do |t|
     t.integer "o_id"
-    t.text "MealDescription"
-    t.integer "NumMeals"
-    t.integer "CustomerID"
-    t.integer "RestaurantID"
-    t.datetime "PickupDate"
+    t.string "meal_description"
+    t.integer "num_meals"
+    t.integer "customer_id"
+    t.integer "restaurant_id"
+    t.datetime "pickup_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -50,16 +66,17 @@ ActiveRecord::Schema.define(version: 2021_11_03_194335) do
     t.datetime "updated_at"
   end
 
-  create_table "usrs", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_usrs_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_usrs_on_reset_password_token", unique: true
+    t.string "username"
+    t.string "provider"
+    t.string "uid"
+    t.index ["provider"], name: "index_users_on_provider"
+    t.index ["uid"], name: "index_users_on_uid"
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end

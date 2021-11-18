@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :usrs
+
   devise_for :users
   resources :restaurants
   resources :customers
