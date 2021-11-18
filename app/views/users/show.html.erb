@@ -4,38 +4,28 @@
 <div  class="col-11" style="text-indent:120px;text-align:center;">
 <p style="color:inherit;">
 Hi, <%= current_user.first_name %>!
+Here are your current orders:
 </div>
 </p>
 </div>
 
-<p>
-  <strong>first_name:</strong>
-  <%= @user.first_name %>
-</p>
+<table>
+  <thead>
+    <tr>
+       <th>Order Id</th>
+       <th>Date Requested</th>
+       <th>Meal description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order|%>
+    <tr>
+      <td><%= order.id %></td>
+      
+      <td><%= order.created_at %></td>
 
-<p>
-  <strong>last_name:</strong>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <strong>username:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>num_meals:</strong>
-  <%= @user.num_meals %>
-</p>
-
-<p>
-  <strong>allergies:</strong>
-  <%= @user.allergies %>
-</p>
-
-<p>
-  <strong>pickup_date:</strong>
-  <%= @user.pickup_date %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %>
+      <td><%= order.meal_description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
