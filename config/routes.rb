@@ -9,8 +9,7 @@ Rails.application.routes.draw do
   resources :users
   resources :orders
   root :to => redirect('/home')
-  
-  resources :customers, only: [] do
-    resources :orders, module: :users, only: :index
-  end
+
+  get 'users/:id' => 'users#show'
+  resources :users, :only => [:show]
 end

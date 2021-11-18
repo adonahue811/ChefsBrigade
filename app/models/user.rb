@@ -12,4 +12,5 @@ class User < ApplicationRecord
   #validates :pickup_date, :presence => true
          
   has_many :orders
+  
 end

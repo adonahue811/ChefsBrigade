@@ -33,9 +33,10 @@
         <% if user_signed_in? %>
         
         <li class="nav-item">
-          <a class="nav-link" href="/users">Profile</a></li>
+          <li><%= link_to  "Profile", current_user %></li> 
+            
           <%= link_to "Log out", destroy_user_session_path, :method=>'delete'%>
-        
+          
           <% else %>
           <%= link_to "login", new_user_session_path %>
           <% end %>

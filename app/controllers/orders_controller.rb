@@ -1,9 +1,6 @@
-class OrdersController
-      # GET /users/:user_id/orders
+class OrdersController < ApplicationController
     def index
-        @customer = Customer.includes(:orders).find(params[:id])
-        @orders = @customer.orders
-        
-    end
-end
-  
+        @user = User.includes(:orders).find(params[:id])
+        @orders = @user.orders
+      end
+end 
