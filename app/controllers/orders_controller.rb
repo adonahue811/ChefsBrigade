@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
+    @order.user_id = current_user.id
   end
 
   # GET /orders/1/edit
@@ -22,7 +23,7 @@ class OrdersController < ApplicationController
   # POST /orders or /orders.json
   def create
     @order = Order.new(order_params)
-    @user_id = current_user.id
+    @order.user_id = current_user.id
 
     respond_to do |format|
       if @order.save
