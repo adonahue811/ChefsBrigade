@@ -12,28 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :meal_description %>
-    <%= form.text_field :meal_description %>
-  </div>
-
-  <div class="field">
     <%= form.label :num_meals %>
     <%= form.text_field :num_meals %>
   </div>
 
   <div class="field">
-    <%= form.label :customer_id %>
-    <%= form.text_field :customer_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :restaurant_id %>
-    <%= form.text_field :restaurant_id %>
-  </div>
-
-  <div class="field">
     <%= form.label :pickup_date %>
     <%= form.text_field :pickup_date %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div class="actions">
