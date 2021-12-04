@@ -1,3 +1,4 @@
+<div class="signinBox">
 <%= form_with(model: customer, local: true) do |form| %>
   <% if customer.errors.any? %>
     <div id="error_explanation">
@@ -42,6 +43,7 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit   :class => 'btn' %>
   </div>
 <% end %>
+</div>
