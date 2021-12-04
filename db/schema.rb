@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 2021_11_18_081741) do
     t.string "last_name"
     t.string "username"
     t.string "order_id"
+    t.json "allergies"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["order_id"], name: "index_users_on_order_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
