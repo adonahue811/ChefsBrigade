@@ -10,23 +10,30 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="card">
+    <div class="card-body">
 
-  <div class="field">
-    <%= form.label :num_meals %>
-    <%= form.text_field :num_meals %>
+      <div class="mb-3">
+        <%= form.label :num_meals %>
+        <%= form.text_field :num_meals %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :pickup_date %>
+        <%= form.text_field :pickup_date %>
+      </div>
+
+      <div class="field">
+        <%= form.hidden_field :user_id, value: current_user.id %>
+      </div>
   </div>
 
-  <div class="field">
-    <%= form.label :pickup_date %>
-    <%= form.text_field :pickup_date %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.hidden_field :user_id, value: current_user.id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-
+<br>
+<div class="actions">
+<%= form.submit %>
+</div>
 <% end %>
