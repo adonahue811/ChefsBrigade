@@ -37,9 +37,11 @@
   </div>
 
   <div class="field">
-    <%= form.label :Pickup_Date %>
-    <%= form.text_field :Pickup_Date %>
-  </div>
+  <%= form.label :Pickup_Date %>
+  <input type="date" id="Pickup_Date" name="Pickup_Date"
+     min="2021-12-01" max="2022-12-31">
+  
+</div>
 
   <div class="actions">
     <%= form.submit %>
