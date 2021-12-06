@@ -27,7 +27,7 @@
 
 <p>
   <strong>Pickup date:</strong>
-  <%= @customer.Pickup_Date %>
+  <%= @customer.Pickup_Date.strftime("%d-%m-%Y %H:%M") %>
 </p>
 
 <%= link_to 'Edit', edit_customer_path(@customer) %> |

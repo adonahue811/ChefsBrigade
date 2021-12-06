@@ -24,9 +24,11 @@ Here are your current orders:
     <tr>
       <td><%= order.id %></td>
       
-      <td><%= order.created_at %></td>
+      <td><%= order.created_at.strftime("%d-%m-%Y %H:%M") %></td>
 
-      <td><%= order.pickup_date %></td>
+      <td><%= order.pickup_date.strftime("%d-%m-%Y %H:%M")
+
+      %></td>
 
       <td><%= order.meal_description %></td>
 
