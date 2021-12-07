@@ -17,6 +17,8 @@ Here are your current orders:
        <th>Pickup Date</th>
        <th>Meal description</th>
        <th>Restaurant Id</th>
+       <th>Edit</th>
+       <th>Cancel</th>
     </tr>
   </thead>
   <tbody>
@@ -34,8 +36,15 @@ Here are your current orders:
 
       <td><%= order.restaurant_id %></td>
 
+      <td><%= link_to 'Edit Order', edit_order_path(order) %></td>
+
+      <td><%= link_to 'Cancel Order', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
+
 
       </tr>
     <% end %>
   </tbody>
 </table>
+<p><%= link_to 'place a new order', new_order_path %></p>
