@@ -1,7 +1,9 @@
 class OrdersController < ApplicationController
+
   before_action :set_order, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :correct_user, only: [:edit, :update, :destroy]
+
 
   # GET /orders or /orders.json
   def index
@@ -10,20 +12,24 @@ class OrdersController < ApplicationController
 
   # GET /orders/1 or /orders/1.json
   def show
+    @order = Order.includes(:customer).find(params[:id])
   end
 
   # GET /orders/new
   def new
     @order = current_user.orders.build
+
   end
 
   # GET /orders/1/edit
   def edit
+    @order = Order.find params[:id]
   end
 
   # POST /orders or /orders.json
   def create
     @order = current_user.orders.build(order_params)
+
 
     respond_to do |format|
       if @order.save
@@ -40,6 +46,8 @@ class OrdersController < ApplicationController
 
   # PATCH/PUT /orders/1 or /orders/1.json
   def update
+    @order = Order.find params[:id]
+
     respond_to do |format|
       if @order.update(order_params)
         format.html { redirect_to @order, notice: "Order was successfully updated." }
@@ -53,7 +61,11 @@ class OrdersController < ApplicationController
 
   # DELETE /orders/1 or /orders/1.json
   def destroy
-    @order.destroy
+    @order = Order.find(params[:id])
+    if @order.present?
+      @order.destroy
+    end
+
     respond_to do |format|
       format.html { redirect_to orders_url, notice: "Order was successfully destroyed." }
       format.json { head :no_content }

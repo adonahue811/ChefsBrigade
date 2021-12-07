@@ -12,6 +12,7 @@
     </div>
   <% end %>
 
+
   <div class="field">
     <%= form.label :num_meals %>
     <%= form.text_field :num_meals %>
@@ -26,10 +27,14 @@
     <%= form.label :pickup_date %>
     <%= form.text_field :pickup_date, type: :date ,
     min: :'2021-12-06', max: :'2022-12-31'%>
+
   </div>
+</div>
+
 
   <div class="actions">
     <%= form.submit :class => 'btn'%>
   </div>
+
 <% end %>
 </div>

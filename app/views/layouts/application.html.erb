@@ -25,11 +25,17 @@
           <li class="nav-item">
             <a class="nav-link" href="/restaurants">Restaurants</a>
           </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="/orders/new">Place an Order</a>
+          </li>
+
           <li <div class="ml-auto">
           </div>
             <% if user_signed_in? %>
-            
-              <li style="list-style: none;"><%= link_to  "Profile", current_user, class: "a" %></li> 
+              <li style="list-style: none;"><%= link_to  "My Orders", current_user, class: "a" %></li> 
+
                 
               <%= link_to "Log out", destroy_user_session_path, :method=>'delete'%>
               

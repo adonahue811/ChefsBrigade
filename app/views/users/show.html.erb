@@ -29,6 +29,12 @@ Here are your current orders:
 
       <td><%= order.num_meals%></td>
 
+      <td><%= link_to 'Edit Order', edit_order_path(order) %></td>
+
+      <td><%= link_to 'Cancel Order', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
+
 
       </tr>
     <% end %>
@@ -36,4 +42,6 @@ Here are your current orders:
 
   </tbody>
 </table>
+
   <center><a href='/orders/new' class="btn btn-primary"> Submit new order </a></center>
+
