@@ -1,3 +1,4 @@
+<div class='signinBox'>
 <%= form_with(model: order, local: true) do |form| %>
   <% if order.errors.any? %>
     <div id="error_explanation">
@@ -11,31 +12,29 @@
     </div>
   <% end %>
 
-  <div class="card">
-    <div class="card-body">
 
-      <div class="mb-3">
-        <%= form.label :Number_of_Meals %>
-        <%= form.text_field :num_meals %>
-      </div>
-
-      <div class="mb-3">
-        <%= form.label :Pickup_Date %>
-        <%= form.text_field :pickup_date %>
-      </div>
-
-      <div class="field">
-        <%= form.hidden_field :user_id, value: current_user.id %>
-      </div>
+  <div class="field">
+    <%= form.label :num_meals %>
+    <%= form.text_field :num_meals %>
   </div>
+
+    <%= form.number_field :user_id, id: :order_user_id,
+        value: current_user.id, type: :hidden %>
+    <%= form.number_field :restaurant_id, id: :order_restaurant_id,
+        value: 'Matching...', type: :hidden %>
+
+  <div class="field">
+    <%= form.label :pickup_date %>
+    <%= form.text_field :pickup_date, type: :date ,
+    min: :'2021-12-06', max: :'2022-12-31'%>
 
   </div>
 </div>
 
-<br>
-<br>
 
-<div class="actions">
-<%= form.submit %>
-</div>
+  <div class="actions">
+    <%= form.submit :class => 'btn'%>
+  </div>
+
 <% end %>
+</div>

@@ -28,7 +28,7 @@ fake_restaurants.each do |restaurant|
 end
 
 # Seed the orders DB with some orders.
-fake_orders = [
+=beginfake_orders = [
   {:meal_description => 'sandwiches', :num_meals => 25, :user_id => 5, :restaurant_id => 3, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
   {:meal_description => 'sandwiches', :num_meals => 10, :user_id => 3, :restaurant_id => 5, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
   {:meal_description => 'soup and salad', :num_meals => 90, :user_id => 6, :restaurant_id => 7, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
@@ -88,5 +88,6 @@ User.create!([
   {email: "astewart@email.com", password: "secure_password", password_confirmation: "secure_password", first_name: "April", last_name: "Stewart", username: "AStewart", num_meals: 1, pickup_date:'2021-07-11 00:00:00 UTC'},
   {email: "jstein@email.com", password: "secure_password", password_confirmation: "secure_password", first_name: "Josh", last_name: "Stein", username: "JStein", num_meals: 1, pickup_date:'2021-07-11 00:00:00 UTC'}
 ])
+=end
 
 

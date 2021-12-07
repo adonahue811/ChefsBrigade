@@ -15,10 +15,7 @@ Here are your current orders:
        <th>Order Id</th>
        <th>Date Requested</th>
        <th>Pickup Date</th>
-       <th>Meal description</th>
-       <th>Restaurant Id</th>
-       <th>Edit</th>
-       <th>Cancel</th>
+       <th>Meals</th>
     </tr>
   </thead>
   <tbody>
@@ -26,15 +23,11 @@ Here are your current orders:
     <tr>
       <td><%= order.id %></td>
       
-      <td><%= order.created_at.strftime("%d-%m-%Y %H:%M") %></td>
+      <td><%= order.created_at.strftime("%m-%d-%Y") %></td>
 
-      <td><%= order.pickup_date.strftime("%d-%m-%Y %H:%M")
+      <td><%= order.pickup_date.strftime("%m-%d-%Y")%></td>
 
-      %></td>
-
-      <td><%= order.meal_description %></td>
-
-      <td><%= order.restaurant_id %></td>
+      <td><%= order.num_meals%></td>
 
       <td><%= link_to 'Edit Order', edit_order_path(order) %></td>
 
@@ -45,6 +38,10 @@ Here are your current orders:
 
       </tr>
     <% end %>
+  
+
   </tbody>
 </table>
-<p><%= link_to 'place a new order', new_order_path %></p>
+
+  <center><a href='/orders/new' class="btn btn-primary"> Submit new order </a></center>
+

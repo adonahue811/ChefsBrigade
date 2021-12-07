@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <strong>Num meals:</strong>
   <%= @order.num_meals %>
 </p>
 
+
 <p>
   <strong>Pickup date:</strong>
-  <%= @order.pickup_date.strftime("%d-%m-%Y %H:%M")
+  <%= @order.pickup_date.strftime("%m-%d-%Y")
 
   %>
 </p>

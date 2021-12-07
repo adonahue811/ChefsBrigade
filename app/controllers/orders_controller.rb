@@ -1,6 +1,9 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!
-  
+
+  before_action :set_order, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+
 
   # GET /orders or /orders.json
   def index
@@ -14,8 +17,8 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    @order = Order.new
-    @order.user_id = current_user.id
+    @order = current_user.orders.build
+
   end
 
   # GET /orders/1/edit
@@ -25,18 +28,20 @@ class OrdersController < ApplicationController
 
   # POST /orders or /orders.json
   def create
-    @order = Order.new(order_params)
-    @order.user_id = current_user.id
+    @order = current_user.orders.build(order_params)
+
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: "Order was successfully created." }
+        format.html { redirect_to @order, notice: "Order was successfully created and is being matched to a restaurant. You will receive an email where you will be picking up your food soon!" }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
+
+    #match an order to a restaurant based on the number of meals ordered
   end
 
   # PATCH/PUT /orders/1 or /orders/1.json
@@ -67,6 +72,11 @@ class OrdersController < ApplicationController
     end
   end
 
+  def correct_user
+    @order = current_user.orders.find_by(id:params[:id])
+    redirect_to orders_path, notice: "Not Authorized to Edit This Order" if @order.nil?
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order
@@ -75,6 +85,6 @@ class OrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def order_params
-      params.require(:order).permit(:meal_description, :num_meals, :customer_id, :restaurant_id, :pickup_date)
+      params.require(:order).permit(:num_meals, :pickup_date, :user_id)
     end
 end
