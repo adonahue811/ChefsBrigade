@@ -46,6 +46,6 @@ class OrdersTest < ApplicationSystemTestCase
       click_on "Destroy", match: :first
     end
 
-    assert_text "Order was successfully destroyed"
+    assert_text "Order was successfully canceled"
   end
 end

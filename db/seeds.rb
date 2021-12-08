@@ -1,9 +1,8 @@
-# Seed the restaurants DB with some restaurants.
-Restaurant.destroy_all
+# Seed the restaurants DB with some restaurants.#Restaurant.destroy_all
 fake_restaurants = [
   {:name => 'The Camellia Grill',:address => '626 S Carrollton Ave', :phone => '504-309-2679', :email => 'email@email.com' ,:description => 'Storied institution offering classic diner fare & comfort food served by waiters wearing bow ties.' ,:picture_link => 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_80,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/neworleans/NOTMC_544390-a9c1c98d5056b36_a9c1cc34-5056-b365-abf94e1fa36b2731.jpg'},
   {:name => 'Superior Seafood',:address => '4338 St Charles Ave', :phone => '504-293-3474', :email => 'another.email@domain.com' ,:description => 'Seafood-focused Creole fare in Allergies sunny, tiled space with St. Charles Avenue views & Allergies happy hour.' ,:picture_link => 'https://midtownmiamimagazine.com/wp-content/uploads/2020/11/15027892_1311639908870057_2448310103144232804_n.jpg'},
-  {:name => 'Lua Viet',:address => '123 West Alabama', :phone => '123-456-7890', :email => 'email@domain.com' ,:description => 'something' ,:picture_link => 'https://scontent-dfw5-1.xx.fbcdn.net/v/t1.6435-9/209498471_2939641032915267_6153842697899554511_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=UpiP4RN2y_4AX9lvTt-&_nc_ht=scontent-dfw5-1.xx&oh=e3c4b900c099ef4742d4ccd0524ff7f9&oe=61AA7C0B'},
+  {:name => 'Lua Viet',:address => '123 West Alabama', :phone => '123-456-7890', :email => 'email@domain.com' ,:description => 'something' ,:picture_link => 'https://assets.simpleviewinc.com/simpleview/image/upload/crm/houston/Lua-Viet-Kitchen-2d3537f20b4e03d_2d353973-04cf-c9a5-58fe89b080945e6e.jpg'},
   {:name => 'Ancora Pizzeria',:address => '6629 Freret', :phone => '098-765-4321', :email => 'another.email@domain.com' ,:description => 'something' ,:picture_link => 'https://img2.10bestmedia.com/Images/Photos/371821/Ancora-pizza_55_660x440.jpg'},
   {:name => 'LUVI',:address => '123 Magazine', :phone => '123-456-7890', :email => 'email@domain.com' ,:description => 'something' ,:picture_link => 'https://www.luvirestaurant.com/uploads/b/fe27f0a0-d370-11e9-9122-03a56d51c7da/190826_RodrigueStudio0063-Edit.jpg?width=2000'},
   {:name => 'Bearcat',:address => '9151 Freret', :phone => '098-765-4321', :email => 'another.email@domain.com' ,:description => 'something' ,:picture_link => 'https://bloximages.newyork1.vip.townnews.com/nola.com/content/tncms/assets/v3/editorial/0/2e/02eb3912-16b0-11ea-81d0-f3e0d9267b06/5de7da28e918c.image.jpg?resize=1200%2C800'},
@@ -28,7 +27,7 @@ fake_restaurants.each do |restaurant|
 end
 
 # Seed the orders DB with some orders.
-=beginfake_orders = [
+fake_orders = [
   {:meal_description => 'sandwiches', :num_meals => 25, :user_id => 5, :restaurant_id => 3, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
   {:meal_description => 'sandwiches', :num_meals => 10, :user_id => 3, :restaurant_id => 5, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
   {:meal_description => 'soup and salad', :num_meals => 90, :user_id => 6, :restaurant_id => 7, :pickup_date => ' 2021-07-11 00:00:00 UTC'},
@@ -78,16 +77,14 @@ fake_customers = [
   {:FirstName => 'Julia',:LastName => 'Stall', :UserName => 'JStall', :Num_Meals => '2', :Allergies => 'Gluten', :Pickup_Date => ' 2021-07-11 00:00:00 UTC'},
 ]
 
-
-
 fake_customers.each do |customer|
   Customer.create!(customer)
 end
+
 
 User.create!([
   {email: "astewart@email.com", password: "secure_password", password_confirmation: "secure_password", first_name: "April", last_name: "Stewart", username: "AStewart", num_meals: 1, pickup_date:'2021-07-11 00:00:00 UTC'},
   {email: "jstein@email.com", password: "secure_password", password_confirmation: "secure_password", first_name: "Josh", last_name: "Stein", username: "JStein", num_meals: 1, pickup_date:'2021-07-11 00:00:00 UTC'}
 ])
-=end
 
-
+end

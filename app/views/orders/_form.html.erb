@@ -14,8 +14,8 @@
 
 
   <div class="field">
-    <%= form.label :num_meals %>
-    <%= form.text_field :num_meals %>
+  <%= form.label :number_of_meals %>
+  <%= form.select :num_meals, [1,2,3,4,5,6,7,8,9,10]%>
   </div>
 
     <%= form.number_field :user_id, id: :order_user_id,
@@ -23,18 +23,19 @@
     <%= form.number_field :restaurant_id, id: :order_restaurant_id,
         value: 'Matching...', type: :hidden %>
 
-  <div class="field">
-    <%= form.label :pickup_date %>
-    <%= form.text_field :pickup_date, type: :date ,
-    min: :'2021-12-06', max: :'2022-12-31'%>
 
-  </div>
+  
+    <div class="field">
+    <%= form.label :pickup_date %>
+    <%= form.datetime_select :pickup_date, { ampm: true, order: [:month, :day, :year] } %>
+
 </div>
 
 
   <div class="actions">
     <%= form.submit :class => 'btn'%>
-  </div>
-
+  
+    </div>
 <% end %>
+<%= link_to 'Back', current_user %>
 </div>
