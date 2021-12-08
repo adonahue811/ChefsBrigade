@@ -9,6 +9,7 @@ Here are your current orders:
 </p>
 </div>
 
+
 <table>
   <thead>
     <tr>
@@ -23,9 +24,10 @@ Here are your current orders:
     <tr>
       <td><%= order.id %></td>
       
-      <td><%= order.created_at.strftime("%m-%d-%Y") %></td>
+      <td><%= order.created_at.strftime("%m/%d/%Y") %></td>
 
-      <td><%= order.pickup_date.strftime("%m-%d-%Y")%></td>
+      <td><%= order.pickup_date.strftime("%m/%d/%Y, %l:%M %p") %></td>
+
 
       <td><%= order.num_meals%></td>
 
