@@ -29,8 +29,8 @@
     <%= form.datetime_select :pickup_date, { ampm: true, order: [:month, :day, :year] } %>
 </div>
     <div class="field">
-    <%= form.label :restaurant_name %>
-    <%= form.collection_select(:restaurant_name, Restaurant.all, :id, :name, prompt: true, selected: @order.restaurant_name) %>
+    <%= form.label :restaurant_id %>
+    <%= form.collection_select(:restaurant_id, Restaurant.all, :id, :name, prompt: true) %>
 </div>
 
 

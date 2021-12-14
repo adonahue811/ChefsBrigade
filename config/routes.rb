@@ -10,4 +10,9 @@ Rails.application.routes.draw do
 
   get 'users/:id' => 'users#show'
   resources :users, :only => [:show]
+  get 'restaurants/:id' => 'restaurants#show'
+  resources :restaurants do
+    resources :orders, except: :index
+  end
+  resources :orders
 end
