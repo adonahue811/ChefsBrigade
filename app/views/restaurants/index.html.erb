@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 <head>
   <%= stylesheet_link_tag "application.css" %> </head>
+<div class="restaurantWrapper">
 <h1>Restaurants</h1>
   <% i = 0%>
   <% @restaurants.each do |restaurant| %>
@@ -8,7 +9,7 @@
     <div class="card-deck" style="margin: 50px 20px 50px 20px;">
     <% end %>
   <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="<%= restaurant.picture_link %>" alt="Card image cap" height="300px" width="200px">
+  <img class="card-img-top" src="<%= restaurant.picture_link %>" alt="Picture of <%= restaurant.name %>" height="300px" width="200px">
   <div class="card-body">
     <h4 class="card-title"><%= restaurant.name %></h4>
   </div>
@@ -33,3 +34,4 @@
 <br>
 
 <p><%= link_to 'New Restaurant', new_restaurant_path %></p>
+</div>

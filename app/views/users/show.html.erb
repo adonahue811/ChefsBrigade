@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
+<div class="userWrapper">
 
-<div class="row" style="background-color:#aad4e5;color:black;">
-<div  class="col-11" style="text-indent:120px;text-align:center;">
 <p style="color:inherit;">
 Hi, <%= current_user.first_name %>!
 Here are your current orders:
-</div>
+
 </p>
-</div>
+
+
 
 <table>
   <thead>
@@ -15,7 +15,9 @@ Here are your current orders:
        <th>Order Id</th>
        <th>Date Requested</th>
        <th>Pickup Date</th>
-       <th>Meals</th>
+       <th>Meals Requested</th>
+       <th></th>
+       <th></th>
     </tr>
   </thead>
   <tbody>
@@ -23,9 +25,9 @@ Here are your current orders:
     <tr>
       <td><%= order.id %></td>
       
-      <td><%= order.created_at.strftime("%m-%d-%Y") %></td>
+      <td><%= order.created_at.strftime("%m/%d/%Y") %></td>
 
-      <td><%= order.pickup_date.strftime("%m-%d-%Y")%></td>
+      <td><%= order.pickup_date.strftime("%m/%d/%Y, %l:%M %p") %></td>
 
       <td><%= order.num_meals%></td>
 
@@ -34,14 +36,12 @@ Here are your current orders:
       <td><%= link_to 'Cancel Order', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
 
-
-
       </tr>
     <% end %>
-  
 
   </tbody>
 </table>
 
-  <center><a href='/orders/new' class="btn btn-primary"> Submit new order </a></center>
+<center><a href='/orders/new' class="btn btn-primary"> Submit new order </a></center>
+</div>
 
