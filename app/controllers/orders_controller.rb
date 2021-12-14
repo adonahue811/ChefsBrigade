@@ -67,7 +67,7 @@ class OrdersController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: "Order was successfully destroyed." }
+      format.html { redirect_to current_user, notice: "Order was successfully destroyed." }
       format.json { head :no_content }
     end
   end

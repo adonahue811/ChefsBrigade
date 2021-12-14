@@ -4,6 +4,7 @@ class Customer < ActiveRecord::Base
     validates :UserName, :presence => true
     validates :Num_Meals, numericality: { only_integer: true }
     validates :Pickup_Date, :presence => true
+    
 
     has_many :orders
 
