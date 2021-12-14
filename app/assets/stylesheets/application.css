@@ -13,19 +13,17 @@
  *= require_tree .
  *= require_self
  */
- .wrapper{
-   background-color: #343a40;
- }
+
 
 .homepage {
   background-image: linear-gradient(to bottom, #ffffff 0%, #00b7ff 100%);
-  margin: 0px 40px 0px 40px;
+  margin: 0px 0px 0px 0px;
   padding: 10px 0px 200px 0px;
 }
 @media only screen and (max-width: 800px) {
   .homepage {
     background-image: linear-gradient(to bottom, #ffffff 0%, #00b7ff 100%);
-    padding: 10px 0px 20px 0px;
+    padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
   }}
 .homepage h1 {
