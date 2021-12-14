@@ -16,8 +16,7 @@ Here are your current orders:
        <th>Date Requested</th>
        <th>Pickup Date</th>
        <th>Meals Requested</th>
-       <th></th>
-       <th></th>
+       <th>Restaurant</th>
     </tr>
   </thead>
   <tbody>
@@ -30,6 +29,8 @@ Here are your current orders:
       <td><%= order.pickup_date.strftime("%m/%d/%Y, %l:%M %p") %></td>
 
       <td><%= order.num_meals%></td>
+
+      <td><%= order.restaurant_id%></td>
 
       <td><%= link_to 'Edit Order', edit_order_path(order) %></td>
 
