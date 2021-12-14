@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 <head>
   <%= stylesheet_link_tag "application.css" %> </head>
+<div class="restaurantWrapper">
 <h1>Restaurants</h1>
   <% i = 0%>
   <% @restaurants.each do |restaurant| %>
@@ -33,3 +34,4 @@
 <br>
 
 <p><%= link_to 'New Restaurant', new_restaurant_path %></p>
+</div>

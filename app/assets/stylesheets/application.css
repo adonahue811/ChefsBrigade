@@ -223,3 +223,11 @@ th { text-align: center;
   padding: 10px 90px 10px 90px;
   transition: all 2s;
 }
+.restaurantWrapper{
+  background-image: linear-gradient(to bottom, #ffffff 0%, #00b7ff 100%);
+  padding-bottom: 100px;
+}
+.restaurantWrapper a{
+color: whitesmoke;
+  
+}
