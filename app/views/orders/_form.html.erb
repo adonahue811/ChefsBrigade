@@ -20,15 +20,17 @@
 
     <%= form.number_field :user_id, id: :order_user_id,
         value: current_user.id, type: :hidden %>
-    <%= form.number_field :restaurant_id, id: :order_restaurant_id,
-        value: 'Matching...', type: :hidden %>
+  
 
 
   
     <div class="field">
     <%= form.label :pickup_date %>
     <%= form.datetime_select :pickup_date, { ampm: true, order: [:month, :day, :year] } %>
-
+</div>
+    <div class="field">
+    <%= form.label :restaurant_id %>
+    <%= form.collection_select(:restaurant_id, Restaurant.all, :id, :name, prompt: true) %>
 </div>
 
 
