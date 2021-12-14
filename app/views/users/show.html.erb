@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
+<div class="userWrapper">
 
-<div class="row" style="background-color:#aad4e5;color:black;">
-<div  class="col-11" style="text-indent:120px;text-align:center;">
 <p style="color:inherit;">
 Hi, <%= current_user.first_name %>!
 Here are your current orders:
-</div>
+
 </p>
-</div>
+
 
 
 <table>
@@ -17,6 +16,8 @@ Here are your current orders:
        <th>Date Requested</th>
        <th>Pickup Date</th>
        <th>Meals Requested</th>
+       <th></th>
+       <th></th>
     </tr>
   </thead>
   <tbody>
@@ -41,5 +42,6 @@ Here are your current orders:
   </tbody>
 </table>
 
-  <center><a href='/orders/new' class="btn btn-primary"> Submit new order </a></center>
+<center><a href='/orders/new' class="btn btn-primary"> Submit new order </a></center>
+</div>
 
