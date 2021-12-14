@@ -46,7 +46,7 @@ Here are your current <%= @restaurant.orders.count %> orders:
     </tr>
   </thead>
   <tbody>
-  <%= @restaurant.orders.each do |order|%>
+  <%- @restaurant.orders.each do |order|%>
       <tr>
       <td><%= order.id %></td>
       
@@ -55,8 +55,6 @@ Here are your current <%= @restaurant.orders.count %> orders:
       <td><%= order.pickup_date.strftime("%m/%d/%Y, %l:%M %p") %></td>
 
       <td><%= order.num_meals%></td>
-
-
       </tr>
     <% end %>
 
