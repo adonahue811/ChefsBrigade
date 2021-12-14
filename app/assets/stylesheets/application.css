@@ -173,8 +173,16 @@ th { text-align: center;
   padding: 10px 10px 0px 10px;
   bottom: 0;
   width: 100%;
-  background: grey;
 }
+
+.navbar-fixed {
+  top: 0;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  bottom: 10;
+}
+body { padding-top: 70px; }
 
 .userWrapper{
   background-image: linear-gradient(to bottom, #ffffff 0%, #00b7ff 100%);
