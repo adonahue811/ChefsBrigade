@@ -30,7 +30,10 @@
   <%= @restaurant.picture_link %>
 </p>
 
-
+<p style="color:inherit;">
+Hi, <%= @restaurant.name %>!
+Here are your current <%= @restaurant.orders.count %> orders:
+</p>
 
 
 <table>
