@@ -17,7 +17,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: chefs-dev
+  database: <%= ENV['dbdevel'] %>
   pool: 5
   username: <%= ENV['username'] %>
   password: <%= ENV['pswd'] %>
@@ -46,7 +46,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: chefs-test
+  database: <%= ENV['dbtest'] %>
   pool: 5
   username: <%= ENV['username'] %>
   password: <%= ENV['pswd'] %>
