@@ -58,3 +58,6 @@ gem 'devise'
 # gem to set language
 gem 'rails-i18n', '~> 6.0.0'
 
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
+

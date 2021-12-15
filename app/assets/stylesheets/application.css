@@ -14,19 +14,20 @@
  *= require_self
  */
 
-
+.wrapper {
+  width: 100%;
+  background-color: #343a40;
+  height:120vh;
+  overflow-y: hidden;
+}
 .homepage {
   background-image: linear-gradient(to bottom, #ffffff 0%, #00b7ff 100%);
-  margin: 0px 0px 0px 0px;
+  margin: 0px 5% 0px 5%;
   padding: 10px 0px 200px 0px;
-  height:100vh;
+  height:120vh;
+  overflow-y: hidden;
 }
-@media only screen and (max-width: 800px) {
-  .homepage {
-    background-image: linear-gradient(to bottom, #ffffff 0%, #00b7ff 100%);
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
-  }}
+
 .homepage h1 {
   text-align: center;
 }
@@ -102,7 +103,7 @@ th { text-align: center;
   background-image: linear-gradient(to bottom, #ffffff 0%, #00b7ff 100%);
   text-align: center;
   padding: 10px;
-  height:100vh;
+  height:110vh;
 }
 .signinBox h2 {
   font: 'San Francisco', Helvetica, Arial, san-serif;font-size: 18px;
@@ -187,10 +188,10 @@ body { padding-top: 70px; }
 .userWrapper{
   background-image: linear-gradient(to bottom, #ffffff 0%, #00b7ff 100%);
   padding-bottom: 100px;
-  height:100vh;
+  height:120vh;
+  overflow-y: hidden;
 }
 .userWrapper thead{
-  width: 100%;
   border-bottom: rgb(231, 189, 0) double 5px;
   
 }
@@ -240,3 +241,9 @@ body { padding-top: 70px; }
 color: whitesmoke;
   
 }
+@media only screen and (max-width: 800px) {
+  .homepage {
+    background-image: linear-gradient(to bottom, #ffffff 0%, #00b7ff 100%);
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+  }}

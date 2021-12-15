@@ -1,4 +1,5 @@
 # Seed the restaurants DB with some restaurants.#Restaurant.destroy_all
+require "faker"
 fake_restaurants = [
   {:name => 'The Camellia Grill',:address => '626 S Carrollton Ave', :phone => '504-309-2679', :email => 'email@email.com' ,:description => 'Storied institution offering classic diner fare & comfort food served by waiters wearing bow ties.' ,:picture_link => 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_80,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/neworleans/NOTMC_544390-a9c1c98d5056b36_a9c1cc34-5056-b365-abf94e1fa36b2731.jpg'},
   {:name => 'Superior Seafood',:address => '4338 St Charles Ave', :phone => '504-293-3474', :email => 'another.email@domain.com' ,:description => 'Seafood-focused Creole fare in a sunny, tiled space with St. Charles Avenue views & a happy hour.', :picture_link => 'https://midtownmiamimagazine.com/wp-content/uploads/2020/11/15027892_1311639908870057_2448310103144232804_n.jpg'},
@@ -26,7 +27,17 @@ fake_restaurants = [
 fake_restaurants.each do |restaurant|
   Restaurant.create!(restaurant)
 end
-  
+
+100.times do
+  restaurants = Restaurant.new(
+      name: Faker::Restaurant.name,
+      address: Faker::Address.street_address,
+      phone: Faker::PhoneNumber.phone_number,
+      email: Faker::Internet.email(name: Faker::Restaurant.name),
+      description: Faker::Restaurant.description,
+      picture_link: 'https://www.paladar511.com/assets/DSC-1620-medium.jpg'
+  )
+end 
 
 fake_users = [
   {custom_user_id: "{ SecureRandom.hex(10)}", email: "astewart@email.com", password: "secure_password", password_confirmation: "secure_password", :first_name => 'April',:last_name => 'Stewart', :username => 'astewart'},
@@ -52,7 +63,7 @@ fake_users = [
 ]
 
 fake_users.each do |user|
-  User.create!(user)
+  #User.create!(user)
 end
 
 fake_orders = [
@@ -80,6 +91,6 @@ fake_orders = [
   {:meal_description => 'burger', :num_meals => 9, :user_id => 2, :restaurant_id => 19, :pickup_date => ' 2021-07-11 18:00:00 UTC'},
 ]
 
-fake_orders.each do |order|
-  Order.create!(order)
-end
+#fake_orders.each do |order|
+#  Order.create!(order)
+#end
