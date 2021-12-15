@@ -1,9 +1,15 @@
 class RestaurantsController < ApplicationController
+  include Pagy::Backend
   before_action :set_restaurant, only: %i[ show edit update destroy ]
 
   # GET /restaurants or /restaurants.json
+  RESTAURANTS_PER_PAGE = 6
   def index
-    @restaurants = Restaurant.all
+    #@restaurants = Restaurant.all
+    #@pagy, @restaurants = pagy(Restaurant.all)
+    @page = params.fetch(:page, 0).to_i
+    @restaurants = Restaurant.offset(@page * RESTAURANTS_PER_PAGE).limit(RESTAURANTS_PER_PAGE)
+    @pageMax = (Restaurant.count / RESTAURANTS_PER_PAGE).ceil
   end
 
   # GET /restaurants/1 or /restaurants/1.json

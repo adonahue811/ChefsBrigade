@@ -1,3 +1,10 @@
+<script>
+ url_base = window.location.href;
+ num = parseInt(url_base.split("=")[1]);
+ if(num < 0){
+   window.location.href = '/restaurant?page=0';
+ }
+</script>
 <p id="notice"><%= notice %></p>
 <head>
   <%= stylesheet_link_tag "application.css" %> </head>
@@ -29,6 +36,24 @@
     <% end %>
       <% i += 1 %>
 <% end %>
+<% if i%3 !=0 %>
+  </div>
+<% end %>
+<center><div>
+  <%= link_to "Previous Page", restaurants_path(page: @page - 1) , :id =>'prevBut' %>
+  <% if @page != @pageMax %>
+  <span id='pipe'>|</span>
+  <%= link_to "Next Page", restaurants_path(page: @page + 1) %>
+  <% end %>
+</div></center>
 </div>
+<script>
+ if(num === 0){
+   document.getElementById('prevBut').style.display = 'none';
+   document.getElementById('pipe').style.display = 'none';
+ }
+
+</script>
+
 
 
