@@ -26,7 +26,7 @@
   
     <div class="field">
     <%= form.label :pickup_date %>
-    <%= form.datetime_select :pickup_date, { ampm: true, order: [:month, :day, :year] } %>
+    <%= form.datetime_select :pickup_date, { ampm: true, order: [:month, :day, :year], :minute_step => 15 } %>
 </div>
     <div class="field">
     <%= form.label :restaurant_id %>

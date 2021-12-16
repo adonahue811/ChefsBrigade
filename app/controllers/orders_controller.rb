@@ -36,7 +36,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: "Order was successfully created and is being matched to a restaurant. You will receive an email where you will be picking up your food soon!" }
+        format.html { redirect_to @current_user, notice: "Order was successfully created and is being matched to a restaurant. You will receive an email where you will be picking up your food soon!" }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: "Order was successfully updated." }
+        format.html { redirect_to current_user, notice: "Order was successfully updated." }
         format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit, status: :unprocessable_entity }
