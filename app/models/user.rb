@@ -15,6 +15,7 @@ class User < ApplicationRecord
     def set_custom_user_id
       self.custom_user_id = "{ SecureRandom.hex(10)}"
     end
+  
 end
   
   

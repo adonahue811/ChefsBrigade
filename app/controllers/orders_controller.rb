@@ -1,14 +1,16 @@
 class OrdersController < ApplicationController
 
+  before_action :authenticate_user!
+  before_action :only_see_own_order, only: [:show]
+
   before_action :set_order, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: [:index, :show]
   before_action :correct_user, only: [:edit, :update, :destroy]
 
 
   # GET /orders or /orders.json
   def index
-    @orders = Order.all
-  end
+    @orders = current_user.orders 
+   end
 
   # GET /orders/1 or /orders/1.json
   def show
@@ -28,7 +30,7 @@ class OrdersController < ApplicationController
 
   # POST /orders or /orders.json
   def create
-    @order = current_user.orders.build(order_params)
+    @order = current_user.orders.new(order_params)
 
 
     respond_to do |format|
@@ -75,6 +77,14 @@ class OrdersController < ApplicationController
   def correct_user
     @order = current_user.orders.find_by(id:params[:id])
     redirect_to orders_path, notice: "Not Authorized to Edit This Order" if @order.nil?
+  end
+
+  def only_see_own_order
+    @user = User.includes(:orders).find(params[:id])
+ 
+    if current_user != @user
+      redirect_to root_path
+    end
   end
 
   private

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   #before_action :set_customer, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
+  before_action :only_see_own_page, only: [:show]
 
   # GET /users or /users.json
   def index
@@ -11,6 +12,7 @@ class UsersController < ApplicationController
   def show
     @user = User.includes(:orders).find(params[:id])
     @orders = @user.orders
+
   end
 
   # GET /users/new
@@ -59,6 +61,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def only_see_own_page
+    @user = User.includes(:orders).find(params[:id])
+ 
+    if current_user != @user
+      redirect_to root_path, notice: "Not authroized to see this page."
+    end
+  end
+  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -69,4 +80,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:first_name, :last_name, :username, :num_meals, :allergies, :pickup_date)
     end
+    
 end
