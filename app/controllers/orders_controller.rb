@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :only_see_own_orders
 
+
   before_action :set_order, only: %i[ show edit update destroy ]
   before_action :correct_user, only: [:edit, :update, :destroy]
 
@@ -87,6 +88,14 @@ class OrdersController < ApplicationController
   end
   
 
+
+  def only_see_own_order
+    @user = User.includes(:orders).find(params[:id])
+ 
+    if current_user != @user
+      redirect_to root_path
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
