@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>This is a confirmation of your recent order <%= @order.id %>!</p>
+    <p>
+    Order details<br>
+    --------------------------
+    </p>
+    <p>Order: <%= @order.id %></p>
+    <p>Restaurant: <%= @order.restaurant_name %></p>
+    <p>Pickup_Date: <%= @order.pickup_date %></p>
+    <p>
+    Thank you for your order!<br>
+    - Chef's Brigade
+    </p>
+  </body>
+</html>
