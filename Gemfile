@@ -60,4 +60,5 @@ gem 'rails-i18n', '~> 6.0.0'
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
+gem "judge", "~> 1.0.0"
 
