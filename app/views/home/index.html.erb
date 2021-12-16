@@ -14,8 +14,23 @@
      <p style="color:inherit;indent:40px;">
       Chef's Brigade is a united coalition of independent restaurants, purveyors and chefs working together under a culinary brigade system to feed healthy and amazing food to the citizens, front line responders and healthcare workers of New Orleans on a daily basis.
 
-     <p> Log in or create an account to get started!</p>  
     </p>
+    <br><br><br>
+    <h3> How can we help you get started?</h3>  
+
+    <button class="accordion">Provide meals for Chef's Brigade</button>
+    
+    <div class="panel">
+      <p>Thank you for you interest in helping us feed people in need. Please conact us with your restaurant and your availibility, and we will add you to our website.</p>
+    </div>
+
+    <button class="accordion">Place an order</button>
+    <div class="panel">
+      <p>Head to the  
+      <a href="/users/sign_in">login page</a> and enter your account information or sign up to place an order.</p>
+    </div>
+
+
 
     </div> 
     <div class="col">
@@ -25,3 +40,19 @@
 </div>
 </div>
 </div>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>

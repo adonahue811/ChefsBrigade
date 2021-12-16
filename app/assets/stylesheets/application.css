@@ -247,3 +247,43 @@ color: whitesmoke;
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
   }}
+
+  
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+} 
+
+.accordion {
+  background-color: #d9f4ff;
+  color: #444;
+  cursor: pointer;
+  padding: 10px;
+  width: 50%;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  transform: translate(7%);
+}
+
+.active, .accordion:hover {
+  background-color: #e7bd00;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  width: 50%;
+  display:block;
+  margin: auto;
+  transform: translate(7%);
+  transition: max-height 0.2s ease-out;
+
+  
+  
+}
