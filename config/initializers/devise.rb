@@ -26,6 +26,21 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
+  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                  465,
+      domain:               'gmail.com',
+      user_name:            'annie.c.donahue@gmail.com',
+      password:             'Zipan81?',
+      authentication:       'plain',
+      enable_starttls_auto: true,
+      ssl: true
+
+  }
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 

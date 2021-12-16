@@ -13,6 +13,23 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
+  config.action_mailer.default_url_options = {host: 'localhost:3000' } # ex. localhost:3000
+  config.action_mailer.raise_delivery_errors = true # to raise error if smtp has error on setup
+  config.action_mailer.default :charset => "utf-8"
+
+  require 'tlsmail'
+  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+    ActionMailer::Base.delivery_method = :smtp
+     config.action_mailer.perform_deliveries = true
+     config.action_mailer.default :charset => "utf-8"
+       ActionMailer::Base.smtp_settings = {
+       :address              => "smtp.gmail.com",
+       :port                 => 587,
+       :user_name            => "annie.c.donahue@gmail.com",
+       :password             => 'Zipan81?',
+       :authentication       => "plain",
+       :enable_starttls_auto => true
+       }
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join('tmp', 'caching-dev.txt').exist?

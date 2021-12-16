@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
       if @order.save
         format.html { redirect_to @order, notice: "Order was successfully created and has been matched to a restaurant. You will receive an email confirming your order soon!" }
         format.json { render :show, status: :created, location: @order }
-        OrderMailer.with(order: @order).new_order_email(current_user).deliver_now
+        OrderMailer.with(order: @order).new_order_email(current_user).deliver
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @order.errors, status: :unprocessable_entity }
