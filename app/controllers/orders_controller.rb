@@ -1,7 +1,6 @@
 class OrdersController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :only_see_own_orders
 
 
   before_action :set_order, only: %i[ show edit update destroy ]
@@ -78,23 +77,6 @@ class OrdersController < ApplicationController
   def correct_user
     @order = current_user.orders.find_by(id:params[:id])
     redirect_to current_user, notice: "Not Authorized to Edit This Order" if @order.nil?
-  end
-
-  def only_see_own_orders
- 
-    if current_user.id != current_user.orders.find_by(id:params[:id])
-      redirect_to root_path, notice: "Not authroized to see this page."
-    end
-  end
-  
-
-
-  def only_see_own_order
-    @user = User.includes(:orders).find(params[:id])
- 
-    if current_user != @user
-      redirect_to root_path
-    end
   end
 
   private
